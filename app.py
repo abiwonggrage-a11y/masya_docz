@@ -1,8 +1,10 @@
 import streamlit as st
-# app.py — baris 13
+
 st.set_page_config(
-  page_title="Finance Dashboard",
-  layout="wide"
+  page_title="Kuliah Praktisi 2305",
+  page_icon="🧊",
+  layout="centered",
+  initial_sidebar_state="expanded"
 )
 
 # Hirarki teks
@@ -10,14 +12,17 @@ st.title("📊 Dashboard")
 st.header("Laporan Bulanan")
 st.subheader("📈 Monthly Expenses")
 st.caption("Made with ❤️ using Streamlit")
+st.write("Hello, *World!* 😁")
 
 title = st.text_input("Movie title", "Life of Brian")
 st.write("The current movie title is", title)
 
 if st.button("Say hello"):
-    st.write("hi pacar dika!")
+    st.write("Why hello there")
 else:
     st.write("Goodbye")
+
+st.button("Reset", type="primary")
 
 col1, col2, col3 = st.columns(3)
 
@@ -32,3 +37,13 @@ with col2:
 with col3:
     st.header("An owl")
     st.image("https://static.streamlit.io/examples/owl.jpg")
+
+st.bar_chart({"data": [1, 5, 2, 6, 2, 1]})
+
+with st.expander("See explanation"):
+    st.write('''
+        The chart above shows some numbers I picked for you.
+        I rolled actual dice for these, so they're *guaranteed* to
+        be random.
+    ''')
+    st.image("https://static.streamlit.io/examples/dice.jpg")
